@@ -100,8 +100,41 @@ main {
 }
 
 #bookshelf-display {
-    background-color: white;
-    min-height: 50%;
-    min-width: 50%;
     border-radius: 20px;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    gap: 2em;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-card-title {
+    font-weight: 700;
+}
+
+.book-card-pages {
+    color: gray;
+}
+
+.book-card-isRead {
+    align-self: flex-end;
+
+    &.read {
+        background-color: green;
+    }
+
+    &.unread {
+        background-color: red;
+    }
 }
