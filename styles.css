@@ -16,6 +16,10 @@
     border-style: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     height: 100vh;
     background-color: var(--bg-main);
@@ -88,7 +92,6 @@ main {
     transition: all 0.2s ease-in;
 
     &:hover {
-        cursor: pointer;
         filter: brightness(1.2);
         scale: 1.1;
     }
@@ -97,6 +100,80 @@ main {
 #add-book-btn svg {
     fill: white;
     height: 2em;
+}
+
+#add-book-modal {
+    background-color: #ffffff00;
+    padding: 2em;
+    align-self: center;
+    justify-self: center;
+
+    &>div {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &::backdrop {
+        background-color: black;
+        opacity: 0.5;
+    }
+}
+
+#close-modal-btn {
+    background-color: white;
+    border-radius: 50%;
+    margin-right: -2em;
+    padding: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>svg {
+        fill: gray;
+        height: 1.5em;
+        align-self: center;
+    }
+}
+
+#add-book-modal form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+    }
+
+    &>.isRead-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#add-book-modal>form>div>input {
+    border: 1px solid var(--tyrian-purple);
+    border-radius: 5px;
+    font-size: 18px;
+
+    &:user-invalid {
+        border-color: red;
+    }
+
+}
+
+#submit-form-btn {
+    background-color: var(--orange-peel);
+    width: min-content;
+    padding: 1em;
+    border-radius: 10px;
+    align-self: flex-end;
+    font-weight: 600;
 }
 
 #bookshelf-display {
